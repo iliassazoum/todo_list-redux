@@ -86,6 +86,7 @@ function UserForms() {
           return (
             <div key={user.id}>
               <li onClick={() => setShowEdit(user.id)}>
+                
                 {user.name} ({user.email})
                 <button className="delete-button" onClick={() => deleteUser(user.id)}>
                   ❌
@@ -96,13 +97,13 @@ function UserForms() {
                 <div>
                   <input
                     type="text"
-                    placeholder="add updated name"
+                    placeholder={user.name}
                     value={updatedName}
                     onChange={(e) => setUpdatedName(e.target.value)}
                   />
                   <input
                     type="email"
-                    placeholder="add updated email"
+                    placeholder={user.email}
                     value={updatedEmail}
                     onChange={(e) => setUpdatedEmail(e.target.value)}
                   />
